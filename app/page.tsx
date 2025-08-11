@@ -1,6 +1,7 @@
 "use client"
 
-import Component from "../components/petri-presentation"
+import Component from "@/components/presentation/component"
+
 
 export default function Page() {
   return <Component />

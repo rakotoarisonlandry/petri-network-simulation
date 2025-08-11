@@ -50,25 +50,19 @@ export default function Component() {
   })
 
   return (
-    <div className="w-full max-w-7xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden">
+    <div className="w-full mx-auto bg-white shadow-2xl  overflow-hidden">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
+      <div className="bg-gradient-to-r fixed z-30 w-full mb-20 from-blue-600 to-purple-600 text-white py-2 px-6">
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold">{slides[currentSlide].title}</h1>
             <p className="text-blue-100 mt-1">{slides[currentSlide].subtitle}</p>
           </div>
-          <div className="text-right">
-            <div className="text-sm opacity-75">Diapositive</div>
-            <div className="text-xl font-bold">
-              {currentSlide + 1} / {slides.length}
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-8 min-h-[500px]">{currentSlideContent}</div>
+      <div className="p-8 mt-20 min-h-[500px]">{currentSlideContent}</div>
 
       {/* Navigation */}
       <div className="bg-gray-50 px-6 py-4 flex justify-between items-center border-t">

@@ -43,7 +43,7 @@ export const useSimulation = () => {
     setNotifications((prev) => [...prev, { id, message, type, icon }])
     setTimeout(() => {
       setNotifications((prev) => prev.filter((n) => n.id !== id))
-    }, 400)
+    }, 600)
   }
 
   const simulateStep = () => {
@@ -127,7 +127,7 @@ export const useSimulation = () => {
             maintenance_crew: prev.maintenance_crew + 1,
           }))
           addNotification(`Maintenance terminée à la station ${randomStation}`, "success", "✅")
-        }, 400)
+        }, 4000)
       }
 
       // Freinage d'urgence
@@ -139,7 +139,7 @@ export const useSimulation = () => {
         setTimeout(() => {
           setTokens((prev) => ({ ...prev, emergency_brake: 0 }))
           addNotification("Système remis en marche", "success", "✅")
-        }, 400)
+        }, 4000)
       }
 
       // Mettre à jour les statistiques

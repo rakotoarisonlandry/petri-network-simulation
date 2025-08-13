@@ -27,7 +27,7 @@ export const slides = [
         <div className="mx-auto w-80 h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl flex items-center justify-center border-4 border-blue-200 shadow-xl">
           <div className="text-center space-y-4">
             <div className="text-8xl animate-bounce">🚇</div>
-            <div className="text-2xl font-bold text-gray-800">Réseau de Petri</div>
+            <div className="text-2xl font-bold text-gray-800">Réseau de Petr</div>
             <div className="text-lg text-gray-600">Transport Intelligent</div>
           </div>
         </div>

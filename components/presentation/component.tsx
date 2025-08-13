@@ -30,7 +30,6 @@ export default function Component() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
 
-  // Passe les props nécessaires aux slides
   const currentSlideContent = slides[currentSlide].content({
     isAnimating,
     animationSpeed,

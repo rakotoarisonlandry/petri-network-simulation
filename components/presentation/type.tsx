@@ -1,43 +1,78 @@
 import { JSX } from "react"
 
+/* =======================
+   Types utilitaires
+======================= */
+
+export type Station = "A" | "B" | "C" | "D" | "E"
+
+export type Binary = 0 | 1
+
+export type NotificationType = "success" | "error" | "warning" | "info" | "emergency"
+
+/* =======================
+   Simulation Tokens
+======================= */
+
 export interface Tokens {
+  // Passagers
   stationA_passengers: number
   stationB_passengers: number
   stationC_passengers: number
   stationD_passengers: number
   stationE_passengers: number
-  train1_position: string
-  train2_position: string
-  train3_position: string
+
+  // Trains
+  train1_position: Station
+  train2_position: Station
+  train3_position: Station
+
   train1_capacity: number
   train2_capacity: number
   train3_capacity: number
-  platform_A: number
-  platform_B: number
-  platform_C: number
-  platform_D: number
-  platform_E: number
-  signal_AB: number
-  signal_BC: number
-  signal_CD: number
-  signal_DE: number
-  signal_EA: number
+
+  // Plateformes
+  platform_A: Binary
+  platform_B: Binary
+  platform_C: Binary
+  platform_D: Binary
+  platform_E: Binary
+
+  // Signaux
+  signal_AB: Binary
+  signal_BC: Binary
+  signal_CD: Binary
+  signal_DE: Binary
+  signal_EA: Binary
+
   maintenance_crew: number
-  emergency_brake: number
+  emergency_brake: Binary
 }
+
+/* =======================
+   Notifications
+======================= */
 
 export interface Notification {
   id: number
   message: string
-  type: string
+  type: NotificationType
   icon: string
 }
+
+/* =======================
+   Slides
+======================= */
 
 export interface Slide {
   title: string
   subtitle: string
-  content: (props: unknown) => JSX.Element
+  content: () => JSX.Element
 }
+
+/* =======================
+   Hook return type
+======================= */
 
 export interface SimulationControls {
   isAnimating: boolean
@@ -50,9 +85,11 @@ export interface SimulationControls {
   selectedTrain: number | null
   notifications: Notification[]
   totalPassengersTransported: number
+
   setIsAnimating: (value: boolean) => void
   setAnimationSpeed: (value: number) => void
   setSelectedTrain: (value: number | null) => void
+
   resetSimulation: () => void
   simulateStep: () => void
 }
